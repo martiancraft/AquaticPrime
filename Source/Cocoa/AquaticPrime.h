@@ -29,7 +29,7 @@
 
 @interface AquaticPrime : NSObject
 
-@property (nonatomic, strong) NSString *hash;
+@property (nonatomic, strong) NSString *licenseHash;
 @property (nonatomic, strong) NSArray *blacklist;
 
 // Creation
@@ -43,8 +43,8 @@
 - (BOOL)setKey:(NSString *)key privateKey:(NSString *)privateKey;
 - (NSString *)key;
 - (NSString *)privateKey;
-- (void)setHash:(NSString *)newHash;
-- (NSString *)hash;
+- (void)setLicenseHash:(NSString *)newHash;
+- (NSString *)licenseHash;
 
 // Generating license data/files
 - (NSData*)licenseDataForDictionary:(NSDictionary *)dict;
