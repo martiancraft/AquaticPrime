@@ -626,7 +626,7 @@
 - (BOOL)isFileBlacklisted:(NSString *)path
 {
     NSData *data = [NSData dataWithContentsOfFile:path];
-    if ([self dictionaryForLicenseData:data]) {
+    if (data != nil && [self dictionaryForLicenseData:data]) {
         return NO;
     }
     if ([self licenseHash] && [self blacklist]) {
