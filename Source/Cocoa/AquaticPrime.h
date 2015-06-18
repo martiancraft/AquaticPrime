@@ -59,6 +59,9 @@
 // Creating new private and public keys
 - (BOOL)generateKeys;
 
+// Blacklisting
+- (BOOL)isFileBlacklisted:(NSString *)path;
+
 // Error handling
 - (NSString *)getLastError;
 

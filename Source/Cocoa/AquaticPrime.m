@@ -620,6 +620,21 @@
     return [self verifyLicenseData:data];
 }
 
+#pragma mark - Blacklisting
+
+
+- (BOOL)isFileBlacklisted:(NSString *)path
+{
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    if ([self dictionaryForLicenseData:data]) {
+        return NO;
+    }
+    if ([self licenseHash] && [self blacklist]) {
+        return [[self blacklist] containsObject:[self licenseHash]];
+    }
+    return NO;
+}
+
 #pragma mark Error Handling
 
 - (void)setAqError:(NSString *)aqError {
