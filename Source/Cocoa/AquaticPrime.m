@@ -607,7 +607,7 @@
 }
 
 - (BOOL)verifyLicenseData:(NSData *)data {
-    if ([self dictionaryForLicenseData:data]) {
+    if (data != nil && [self dictionaryForLicenseData:data]) {
         return YES;
     }
     else {
